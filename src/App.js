@@ -1,6 +1,6 @@
 import logo from "./logo.svg";
 import "./App.css";
-import { Users } from "./Users";
+import { Users } from "./components/Users";
 import Footer from "./Footer";
 import { Header } from "./Header";
 
@@ -40,7 +40,7 @@ function App() {
       <div className="App">
         <Header/>
         <Users/>
-        <h1>HEllo</h1>
+        {/* <h1>HEllo</h1>
         <h1>{sName}</h1>
         <h2>{salary}</h2>
         <h3>{isIndian ? "Indian" : "Not Indian"}</h3>
@@ -70,6 +70,7 @@ function App() {
             </tbody>
           </table>
         </div>
+        <Footer/> */}
         <Footer/>
       </div>
     </>

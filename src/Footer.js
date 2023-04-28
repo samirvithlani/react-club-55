@@ -1,5 +1,6 @@
 import React from 'react'
 
+//rfc
 export default function Footer() {
     var footerStyle = {
         position: "relative",
