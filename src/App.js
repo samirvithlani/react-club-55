@@ -3,6 +3,16 @@ import "./App.css";
 import { Users } from "./components/Users";
 import Footer from "./Footer";
 import { Header } from "./Header";
+import { Navbar } from "./components/Navbar";
+import { Route, Routes } from "react-router-dom";
+import { Employee } from "./components/employee/Employee";
+import { AboutUs } from "./components/employee/AboutUs";
+import { EmployeeDetail } from "./components/employee/EmployeeDetail";
+import { ContactUs } from "./components/employee/ContactUs";
+import { DashBoard } from "./components/employee/DashBoard";
+import { Error404 } from "./components/Error404";
+import { StoreData } from "./components/employee/StoreData";
+import ProtectedRoutes from "./components/ProtectedRoutes";
 
 function App() {
   var a = 10;
@@ -38,8 +48,24 @@ function App() {
   return (
     <>
       <div className="App">
-        <Header/>
-        <Users/>
+        <Navbar />
+        <Routes>
+          <Route element={<ProtectedRoutes/>}>
+            <Route path="/" element={<DashBoard />}></Route>
+            <Route path="/employee" element={<Employee />}></Route>
+            <Route path="/aboutus" element={<AboutUs />}></Route>
+          </Route>
+          <Route
+            path="/employee/employeeDetail/:id"
+            element={<EmployeeDetail />}
+          ></Route>
+          <Route path="/contactus" element={<ContactUs />}></Route>
+          {/* <Route path = "/*" element={<h1>404</h1>}></Route> */}
+          <Route path="/*" element={<Error404 />}></Route>
+          <Route path="/store" element={<StoreData />}></Route>
+        </Routes>
+        {/* <Header/>
+        <Users/> */}
         {/* <h1>HEllo</h1>
         <h1>{sName}</h1>
         <h2>{salary}</h2>
@@ -71,7 +97,7 @@ function App() {
           </table>
         </div>
         <Footer/> */}
-        <Footer/>
+        <Footer />
       </div>
     </>
   );
