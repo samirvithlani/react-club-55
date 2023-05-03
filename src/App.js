@@ -13,6 +13,8 @@ import { DashBoard } from "./components/employee/DashBoard";
 import { Error404 } from "./components/Error404";
 import { StoreData } from "./components/employee/StoreData";
 import ProtectedRoutes from "./components/ProtectedRoutes";
+import { UserRegistration } from "./forms/UserRegistration";
+import { StudentRegistration } from "./forms/StudentRegistration";
 
 function App() {
   var a = 10;
@@ -63,6 +65,8 @@ function App() {
           {/* <Route path = "/*" element={<h1>404</h1>}></Route> */}
           <Route path="/*" element={<Error404 />}></Route>
           <Route path="/store" element={<StoreData />}></Route>
+          <Route path ="/userreg" element={<UserRegistration/>}></Route>
+          <Route path ="/stureg" element={<StudentRegistration/>}></Route>
         </Routes>
         {/* <Header/>
         <Users/> */}
