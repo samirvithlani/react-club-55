@@ -15,6 +15,7 @@ import { StoreData } from "./components/employee/StoreData";
 import ProtectedRoutes from "./components/ProtectedRoutes";
 import { UserRegistration } from "./forms/UserRegistration";
 import { StudentRegistration } from "./forms/StudentRegistration";
+import { ApiDemo1 } from "./api/ApiDemo1";
 
 function App() {
   var a = 10;
@@ -67,6 +68,7 @@ function App() {
           <Route path="/store" element={<StoreData />}></Route>
           <Route path ="/userreg" element={<UserRegistration/>}></Route>
           <Route path ="/stureg" element={<StudentRegistration/>}></Route>
+          <Route path ="/apidemo1" element={<ApiDemo1/>}></Route>
         </Routes>
         {/* <Header/>
         <Users/> */}
