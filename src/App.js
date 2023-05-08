@@ -16,6 +16,8 @@ import ProtectedRoutes from "./components/ProtectedRoutes";
 import { UserRegistration } from "./forms/UserRegistration";
 import { StudentRegistration } from "./forms/StudentRegistration";
 import { ApiDemo1 } from "./api/ApiDemo1";
+import { Students } from "./context/Students";
+import { AppContext } from "./context/context";
 
 function App() {
   var a = 10;
@@ -52,24 +54,27 @@ function App() {
     <>
       <div className="App">
         <Navbar />
-        <Routes>
-          <Route element={<ProtectedRoutes/>}>
-            <Route path="/" element={<DashBoard />}></Route>
-            <Route path="/employee" element={<Employee />}></Route>
-            <Route path="/aboutus" element={<AboutUs />}></Route>
-          </Route>
-          <Route
-            path="/employee/employeeDetail/:id"
-            element={<EmployeeDetail />}
-          ></Route>
-          <Route path="/contactus" element={<ContactUs />}></Route>
-          {/* <Route path = "/*" element={<h1>404</h1>}></Route> */}
-          <Route path="/*" element={<Error404 />}></Route>
-          <Route path="/store" element={<StoreData />}></Route>
-          <Route path ="/userreg" element={<UserRegistration/>}></Route>
-          <Route path ="/stureg" element={<StudentRegistration/>}></Route>
-          <Route path ="/apidemo1" element={<ApiDemo1/>}></Route>
-        </Routes>
+        <AppContext.Provider value={{ user }}>
+          <Routes>
+            <Route element={<ProtectedRoutes />}>
+              <Route path="/" element={<DashBoard />}></Route>
+              <Route path="/employee" element={<Employee />}></Route>
+              <Route path="/aboutus" element={<AboutUs />}></Route>
+            </Route>
+            <Route
+              path="/employee/employeeDetail/:id"
+              element={<EmployeeDetail />}
+            ></Route>
+            <Route path="/contactus" element={<ContactUs />}></Route>
+            {/* <Route path = "/*" element={<h1>404</h1>}></Route> */}
+            <Route path="/*" element={<Error404 />}></Route>
+            <Route path="/store" element={<StoreData />}></Route>
+            <Route path="/userreg" element={<UserRegistration />}></Route>
+            <Route path="/stureg" element={<StudentRegistration />}></Route>
+            <Route path="/apidemo1" element={<ApiDemo1 />}></Route>
+            <Route path="/students" element={<Students />}></Route>
+          </Routes>
+        </AppContext.Provider>
         {/* <Header/>
         <Users/> */}
         {/* <h1>HEllo</h1>
