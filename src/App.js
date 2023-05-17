@@ -18,6 +18,9 @@ import { StudentRegistration } from "./forms/StudentRegistration";
 import { ApiDemo1 } from "./api/ApiDemo1";
 import { Students } from "./context/Students";
 import { AppContext } from "./context/context";
+import { Developers } from "./components/dev/Developers";
+import { DynamicComponent } from "./components/DynamicComponent";
+import { EmployeeRegistrationForm } from "./forms/EmployeeRegistrationForm";
 
 function App() {
   var a = 10;
@@ -54,6 +57,8 @@ function App() {
     <>
       <div className="App">
         <Navbar />
+        {/* <DynamicComponent/> */}
+        <EmployeeRegistrationForm/>
         <AppContext.Provider value={{ user }}>
           <Routes>
             <Route element={<ProtectedRoutes />}>
@@ -73,6 +78,7 @@ function App() {
             <Route path="/stureg" element={<StudentRegistration />}></Route>
             <Route path="/apidemo1" element={<ApiDemo1 />}></Route>
             <Route path="/students" element={<Students />}></Route>
+            <Route path="/dev" element={<Developers/>}></Route>
           </Routes>
         </AppContext.Provider>
         {/* <Header/>
