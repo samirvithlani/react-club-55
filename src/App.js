@@ -21,6 +21,7 @@ import { AppContext } from "./context/context";
 import { Developers } from "./components/dev/Developers";
 import { DynamicComponent } from "./components/DynamicComponent";
 import { EmployeeRegistrationForm } from "./forms/EmployeeRegistrationForm";
+import { ProductRegistation } from "./forms/ProductRegistation";
 
 function App() {
   var a = 10;
@@ -58,7 +59,8 @@ function App() {
       <div className="App">
         <Navbar />
         {/* <DynamicComponent/> */}
-        <EmployeeRegistrationForm/>
+        {/* <EmployeeRegistrationForm/> */}
+        <ProductRegistation/>
         <AppContext.Provider value={{ user }}>
           <Routes>
             <Route element={<ProtectedRoutes />}>
