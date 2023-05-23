@@ -22,6 +22,8 @@ import { Developers } from "./components/dev/Developers";
 import { DynamicComponent } from "./components/DynamicComponent";
 import { EmployeeRegistrationForm } from "./forms/EmployeeRegistrationForm";
 import { ProductRegistation } from "./forms/ProductRegistation";
+import { ApiDemo2 } from "./api/ApiDemo2";
+import { UpdateUser } from "./api/UpdateUser";
 
 function App() {
   var a = 10;
@@ -60,7 +62,7 @@ function App() {
         <Navbar />
         {/* <DynamicComponent/> */}
         {/* <EmployeeRegistrationForm/> */}
-        <ProductRegistation/>
+        {/* <ProductRegistation/> */}
         <AppContext.Provider value={{ user }}>
           <Routes>
             <Route element={<ProtectedRoutes />}>
@@ -79,8 +81,10 @@ function App() {
             <Route path="/userreg" element={<UserRegistration />}></Route>
             <Route path="/stureg" element={<StudentRegistration />}></Route>
             <Route path="/apidemo1" element={<ApiDemo1 />}></Route>
+            <Route path="/apidemo2" element={<ApiDemo2 />}></Route>
             <Route path="/students" element={<Students />}></Route>
             <Route path="/dev" element={<Developers/>}></Route>
+            <Route path="/updateuser/:id" element={<UpdateUser/>}></Route>
           </Routes>
         </AppContext.Provider>
         {/* <Header/>
