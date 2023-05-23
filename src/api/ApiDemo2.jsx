@@ -9,7 +9,12 @@ export const ApiDemo2 = () => {
   const [users, setusers] = useState([]);
   const getUserData = async () => {
     try{
-    const res = await axios.get("https://node5.onrender.com/user/user");
+    const res = await axios.get("https://node5.onrender.com/user/user",{
+        // headers:{
+        //     "Content-Type":"application/json",
+        //     "token":"123456789"
+        // }
+    });
     console.log(res);
     setusers(res.data.data);
     }catch(err){

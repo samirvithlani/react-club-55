@@ -80,7 +80,9 @@ function App() {
             <Route path="/store" element={<StoreData />}></Route>
             <Route path="/userreg" element={<UserRegistration />}></Route>
             <Route path="/stureg" element={<StudentRegistration />}></Route>
-            <Route path="/apidemo1" element={<ApiDemo1 />}></Route>
+            {/* <Route element={<Fileter/>}> */}
+              <Route path="/apidemo1" element={<ApiDemo1 />}></Route>
+            {/* </Route> */}
             <Route path="/apidemo2" element={<ApiDemo2 />}></Route>
             <Route path="/students" element={<Students />}></Route>
             <Route path="/dev" element={<Developers/>}></Route>
