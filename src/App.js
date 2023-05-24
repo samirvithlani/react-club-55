@@ -24,6 +24,8 @@ import { EmployeeRegistrationForm } from "./forms/EmployeeRegistrationForm";
 import { ProductRegistation } from "./forms/ProductRegistation";
 import { ApiDemo2 } from "./api/ApiDemo2";
 import { UpdateUser } from "./api/UpdateUser";
+import { GetQueryDemo } from "./query/GetQueryDemo";
+import { DynamicForm } from "./forms/DynamicForm";
 
 function App() {
   var a = 10;
@@ -60,6 +62,7 @@ function App() {
     <>
       <div className="App">
         <Navbar />
+        <DynamicForm/>
         {/* <DynamicComponent/> */}
         {/* <EmployeeRegistrationForm/> */}
         {/* <ProductRegistation/> */}
@@ -87,6 +90,7 @@ function App() {
             <Route path="/students" element={<Students />}></Route>
             <Route path="/dev" element={<Developers/>}></Route>
             <Route path="/updateuser/:id" element={<UpdateUser/>}></Route>
+            <Route path="/getquery" element={<GetQueryDemo/>}></Route>
           </Routes>
         </AppContext.Provider>
         {/* <Header/>
