@@ -4,7 +4,8 @@ import { Users } from "./components/Users";
 import Footer from "./Footer";
 import { Header } from "./Header";
 import { Navbar } from "./components/Navbar";
-import { Route, Routes } from "react-router-dom";
+import {  Route, Routes } from 'react-router-dom';
+
 import { Employee } from "./components/employee/Employee";
 import { AboutUs } from "./components/employee/AboutUs";
 import { EmployeeDetail } from "./components/employee/EmployeeDetail";
@@ -26,6 +27,9 @@ import { ApiDemo2 } from "./api/ApiDemo2";
 import { UpdateUser } from "./api/UpdateUser";
 import { GetQueryDemo } from "./query/GetQueryDemo";
 import { DynamicForm } from "./forms/DynamicForm";
+import usePrivateRoute from "./components/PrivateRoutes";
+import { APiDemo3 } from "./api/APiDemo3";
+
 
 function App() {
   var a = 10;
@@ -58,16 +62,21 @@ function App() {
   ];
 
   //jsx
+  const isAuthenticated = true;
+  const PrivateRoute = usePrivateRoute(isAuthenticated, "/store"); 
   return (
     <>
       <div className="App">
         <Navbar />
-        <DynamicForm/>
+        {/* <DynamicForm/> */}
+        
         {/* <DynamicComponent/> */}
         {/* <EmployeeRegistrationForm/> */}
         {/* <ProductRegistation/> */}
         <AppContext.Provider value={{ user }}>
+          
           <Routes>
+            {/* <PrivateRoute path ="/apidemo2" element={<ApiDemo2/>}></PrivateRoute> */}
             <Route element={<ProtectedRoutes />}>
               <Route path="/" element={<DashBoard />}></Route>
               <Route path="/employee" element={<Employee />}></Route>
@@ -85,13 +94,18 @@ function App() {
             <Route path="/stureg" element={<StudentRegistration />}></Route>
             {/* <Route element={<Fileter/>}> */}
               <Route path="/apidemo1" element={<ApiDemo1 />}></Route>
+              <Route path="/apidemo3" element={<APiDemo3 />}></Route>
             {/* </Route> */}
-            <Route path="/apidemo2" element={<ApiDemo2 />}></Route>
+            
+            
+            {/* <Route path="/apidemo2" element={<ApiDemo2 />}></Route> */}
+            
             <Route path="/students" element={<Students />}></Route>
             <Route path="/dev" element={<Developers/>}></Route>
             <Route path="/updateuser/:id" element={<UpdateUser/>}></Route>
             <Route path="/getquery" element={<GetQueryDemo/>}></Route>
           </Routes>
+          
         </AppContext.Provider>
         {/* <Header/>
         <Users/> */}

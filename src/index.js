@@ -13,7 +13,7 @@ root.render(
     <QueryClientProvider client={client}>
       <BrowserRouter>
         <App />
-      </BrowserRouter>
+        </BrowserRouter>
     </QueryClientProvider>
   </React.StrictMode>
 );
