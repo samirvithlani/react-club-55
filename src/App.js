@@ -29,6 +29,7 @@ import { GetQueryDemo } from "./query/GetQueryDemo";
 import { DynamicForm } from "./forms/DynamicForm";
 import usePrivateRoute from "./components/PrivateRoutes";
 import { APiDemo3 } from "./api/APiDemo3";
+import { UserUpdate } from "./api/UserUpdate";
 
 
 function App() {
@@ -103,6 +104,7 @@ function App() {
             <Route path="/students" element={<Students />}></Route>
             <Route path="/dev" element={<Developers/>}></Route>
             <Route path="/updateuser/:id" element={<UpdateUser/>}></Route>
+            <Route path="/userupdate/:id" element={<UserUpdate/>}></Route>
             <Route path="/getquery" element={<GetQueryDemo/>}></Route>
           </Routes>
           

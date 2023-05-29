@@ -1,13 +1,14 @@
 import axios from "axios";
 import React, { useState } from "react";
 import { useEffect } from "react";
+import { Link } from "react-router-dom";
 
 //axios npm i axios , fetch
 
 export const APiDemo3 = () => {
     const [users, setusers] = useState([])
   const getUserData = async () => {
-    const res = await axios.get("http://localhost:3001/user/user");
+    const res = await axios.get("https://node5.onrender.com/user/user");
     console.log(res.data);
     setusers(res.data.data);
   };
@@ -17,7 +18,7 @@ export const APiDemo3 = () => {
   }, []);
 
   const deleteUser = async (id) => {
-    const res = await axios.delete("http://localhost:3001/user/user/"+id);
+    const res = await axios.delete("https://node5.onrender.com/user/user/"+id);
     console.log(res.data);
     getUserData();
   }
@@ -40,6 +41,7 @@ export const APiDemo3 = () => {
                             <td>{user.name}</td>
                             <td>
                                 <button onClick={()=>deleteUser(user._id)} className="btn btn-danger">Delete</button>
+                                <Link to ={`/userupdate/${user._id}`} className = "btn btn-info">UPDATE</Link>
                             </td>
                         </tr>
                     )
