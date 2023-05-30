@@ -30,6 +30,7 @@ import { DynamicForm } from "./forms/DynamicForm";
 import usePrivateRoute from "./components/PrivateRoutes";
 import { APiDemo3 } from "./api/APiDemo3";
 import { UserUpdate } from "./api/UserUpdate";
+import { UserServiceComp } from "./components/UserServiceComp";
 
 
 function App() {
@@ -69,6 +70,7 @@ function App() {
     <>
       <div className="App">
         <Navbar />
+        <UserServiceComp/>
         {/* <DynamicForm/> */}
         
         {/* <DynamicComponent/> */}
