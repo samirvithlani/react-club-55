@@ -31,6 +31,7 @@ import usePrivateRoute from "./components/PrivateRoutes";
 import { APiDemo3 } from "./api/APiDemo3";
 import { UserUpdate } from "./api/UserUpdate";
 import { UserServiceComp } from "./components/UserServiceComp";
+import { AddUserService } from "./query/AddUserService";
 
 
 function App() {
@@ -70,7 +71,8 @@ function App() {
     <>
       <div className="App">
         <Navbar />
-        <UserServiceComp/>
+        {/* <UserServiceComp/> */}
+        <AddUserService/>
         {/* <DynamicForm/> */}
         
         {/* <DynamicComponent/> */}
